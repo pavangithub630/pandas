@@ -1,0 +1,131 @@
+
+Pandas is python library which is used to data manipulation and analys
+
+
+two types of pandas datastructes
+
+1.series 
+2.dataframe
+
+
+
+series is a column of a dataframe and siries is a one dimensional labelled array that can hold any datatype 
+
+ such as integer float and string 
+
+
+    series 		series                              Data frame 
+    -------             -------                           ----------------
+
+   emp_id               emp_name                         emp_id     emp_name
+
+  0  101                0 Pavan                          0  101       Pavan
+
+  1  102                1 Wojack         =               1  102       Wojack  
+
+  2  103                2 Zoomer                         2  103       Zoomer
+
+  3  104                3 Karen                          3  104       Karen
+
+
+Data frame is a 2-dimentional labelled datastructure like a table where each column is a series the index 
+in the dataframe represents label for the rows 
+
+
+SERIES
+-----------
+
+
+# creating a series in pandas 
+
+s= pd.Series(['Pavan','Wojack','Zoomer','Karen'])
+
+#passing index to the series 
+
+s=pd.Series(['Pavan','Wojack','Zoomer','Karen'],index=['a','b','c','d'])
+
+
+
+
+#creating a series with two arrays
+
+country=['Ind','Aus','USA','Pak']
+scores=['350','276','231','325']
+
+team_scores=pd.Series(scores,index=country)
+
+
+
+in the same way we can create series with the tuples
+
+but for dictionaries the keys will be indexes and the value will be the column values
+
+
+scores={"Ind":357,"Aus":290,"Pak":230}
+
+pd.Series(scores)
+
+
+
+
+Dataframe
+-------------------
+
+to create a dataframe from a dictionary the dictionary should be
+
+
+	1. should nt contain scalar values ( every key should contain values inside an array] 
+	   if not we should provide index
+	2. all the values(arrays should be of sme length.
+
+
+
+sales = {
+
+	"fruits":['Apple','Orange','Guava','Grapes'] 
+	"cost":['100','70','50','90']
+
+
+}
+
+
+sales_df=pd.DataFame(sales)
+
+
+	fruits	cost
+0	Apple	100
+1	Orange	70
+2	Guava	50
+3	Grapes	90
+
+
+
+# to add custome indexex
+
+sales_df=pd.DataFrame(sales,index=['a','b','c','d'])
+
+	fruits	cost
+a	Apple	100
+b	Orange	70
+c	Guava	50
+d	Grapes	90
+
+
+
+# creating an empty datafram so that we can add rows and columns later 
+
+
+
+df=pd.DataFrame()
+
+
+columns=['id','name','marks']
+
+df=pd.DataFrame(columns=columns)
+
+
+
+
+
+
+
